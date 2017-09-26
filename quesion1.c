@@ -12,6 +12,9 @@ string[] fizzbuzz(int n){
 		else if(i%5==0){
 			answer[i]="Buzz";
 		}
+		else if(i%5==0 && i%3==0){
+			answer[i]="FizzBuzz";
+		}
 		else{
 			answer[i] = i;
 		}

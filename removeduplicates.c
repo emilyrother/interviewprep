@@ -3,25 +3,32 @@
 
 #include <malloc.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+	int data;
+	struct Node* next;
+}
 
 linkedlist delete(linkedlist original){
 	
-	ptr* check;
+	struct Node* check=head;
+	struct Node* tbd; //pointer to store the next for the to be deleted
 
 	while(check->next != NULL){
 		if(check->data == check->next->data){
 			//remove the next node 
-			remove(check);
+			tbd=check->next->next;
+			free(check->next);
+			check->next=tbd; //new next value is the one after next
 		}
-		//change pointer
-		check = check->next;
+		//change pointer only if not deleted
+		else{
+			check = check->next;
+		}
 	}
 
 	return original;
-
-}
-
-//function to remove node
-ptr* remove(node duplicate){
 
 }

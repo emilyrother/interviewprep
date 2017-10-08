@@ -58,5 +58,3 @@ n = len (weights)
 print ' '.join(map(str, opt))
 print sol_tot_weight
 print ' '.join(map(str, sol_items))
-
-
